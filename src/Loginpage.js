@@ -5,7 +5,10 @@ function LoginPage(props) {
   const onChange = (evt) => setUsername(evt.target.value);
   const [username, setUsername] = useState("");
   const onClick = () => {
-    props.onLogin(username);
+    if (username.length != 0) {
+        props.onLogin(username);
+    }
+    
   };
 
   return (
